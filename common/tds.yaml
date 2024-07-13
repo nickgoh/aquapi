@@ -1,0 +1,12 @@
+substitutions:
+  tdspin1: "35"
+  update_tds: "60s"
+
+sensor:
+  - platform: adc
+    pin: ${tdspin1}
+    name: "Water TDS"
+    update_interval: ${update_tds}
+    unit_of_measurement: "ppm"
+    filters:
+      - lambda: return (((133.42*(x*(3.3/1024))*(x*(3.3/1024))*(x*(3.3/1024))) - (255.86*(x*(3.3/1024))*(x*(3.3/1024))) + (857.39*(x*(3.3/1024))))*0.5)*1000;
