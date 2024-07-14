@@ -1,0 +1,19 @@
+substitutions:
+  flowMeterPin: "12"
+  update_temp: "60s"
+  
+- platform: pulse_counter
+    pin: ${flowMeterPin}
+    unit_of_measurement: 'ml/min'
+    accuracy_decimals: 2
+    update_interval: 60s
+    name: 'RO Meter'
+    filters:
+    - lambda: return (x / 1.2);  
+    
+    total:
+      unit_of_measurement: 'ml'
+      name: 'RO Meter Total'
+      accuracy_decimals: 2
+      filters:
+      - lambda: return (x / 1.2);
