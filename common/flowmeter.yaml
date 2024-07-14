@@ -1,12 +1,15 @@
 substitutions:
   flowMeterPin: "12"
-  update_temp: "60s"
-  
+  update_flowMeter: "60s"
+
+# flowmeter model FS-K2T
+# 1200 pulses LPM
+
 - platform: pulse_counter
     pin: ${flowMeterPin}
     unit_of_measurement: 'ml/min'
     accuracy_decimals: 2
-    update_interval: 60s
+    update_interval: ${update_flowMeter}
     name: 'RO Meter'
     filters:
     - lambda: return (x / 1.2);  
