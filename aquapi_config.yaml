@@ -28,3 +28,4 @@ packages:
   # ezo_commands: !include common/ezo_commands.yaml
   # debug: !include common/debug.yaml
   tds: !include common/tds.yaml
+  flowmeter: !include common/flowmeter.yaml
