@@ -4,23 +4,23 @@ substitutions:
 
 # flowmeter model FS-K2T
 # 1200 pulses LPM
-
-- platform: pulse_counter
-  id: flowmeter
-  pin: 
-      number: ${flowMeterPin}
-      mode:
-        input: true
-  unit_of_measurement: 'ml/min'
-  accuracy_decimals: 2
-  update_interval: ${update_flowMeter}
-  name: 'flowmeter'
-  filters:
-  - lambda: return (x / 1.2);  
-  
-  total:
-    unit_of_measurement: 'ml'
-    name: 'RO Meter Total'
+sensor:
+  - platform: pulse_counter
+    id: flowmeter
+    pin: 
+        number: ${flowMeterPin}
+        mode:
+          input: true
+    unit_of_measurement: 'ml/min'
     accuracy_decimals: 2
+    update_interval: ${update_flowMeter}
+    name: 'flowmeter'
     filters:
-    - lambda: return (x / 1.2);
+    - lambda: return (x / 1.2);  
+    
+    total:
+      unit_of_measurement: 'ml'
+      name: 'RO Meter Total'
+      accuracy_decimals: 2
+      filters:
+      - lambda: return (x / 1.2);
