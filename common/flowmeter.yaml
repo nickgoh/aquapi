@@ -1,6 +1,6 @@
 substitutions:
-  flowMeterPin: "12"
-  update_flowMeter: "10s"
+  flowmeterpin: "12"
+  update_flowmeter: "10s"
 
 # flowmeter model FS-K2T
 # 1200 pulses LPM
@@ -12,11 +12,11 @@ sensor:
     unit_of_measurement: 'ml/min'
     accuracy_decimals: 2
     pin: 
-        number: ${flowMeterPin}
+        number: ${flowmeterpin}
         mode:
           input: true
           pullup: true
-    update_interval: ${update_flowMeter}
+    update_interval: ${update_flowmeter}
     filters:
     - lambda: return (x / 1.2);  
     
