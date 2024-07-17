@@ -7,14 +7,15 @@ substitutions:
 sensor:
   - platform: pulse_counter
     id: flowmeter
+    name: 'flowmeter'
+    device_class: 'volume'
+    unit_of_measurement: 'ml/min'
+    accuracy_decimals: 2
     pin: 
         number: ${flowMeterPin}
         mode:
           input: true
-    unit_of_measurement: 'ml/min'
-    accuracy_decimals: 2
     update_interval: ${update_flowMeter}
-    name: 'flowmeter'
     filters:
     - lambda: return (x / 1.2);  
     
@@ -22,5 +23,6 @@ sensor:
       unit_of_measurement: 'ml'
       name: 'RO Meter Total'
       accuracy_decimals: 2
+      device_class: 'volume'
       filters:
       - lambda: return (x / 1.2);
