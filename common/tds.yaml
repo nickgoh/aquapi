@@ -5,7 +5,7 @@ substitutions:
 sensor:
   - platform: adc
     pin: ${tdspin1}
-    name: "Water TDS"
+    name: "Water TDS nick"
     update_interval: ${update_tds}
     unit_of_measurement: "ppm"
     filters:
