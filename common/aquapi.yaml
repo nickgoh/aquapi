@@ -1,7 +1,7 @@
 text_sensor: 
   # AquaPi Version
   - platform: template
-    name: "AquaPi Version"
+    name: "AquaPi Nick Version"
     id: aquapi_version
     icon: mdi:update
     update_interval: '365days'
