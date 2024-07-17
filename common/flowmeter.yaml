@@ -6,17 +6,21 @@ substitutions:
 # 1200 pulses LPM
 
 - platform: pulse_counter
-    pin: ${flowMeterPin}
-    unit_of_measurement: 'ml/min'
+  id: flowmeter
+  pin: 
+      number: ${flowMeterPin}
+      mode:
+        input: true
+  unit_of_measurement: 'ml/min'
+  accuracy_decimals: 2
+  update_interval: ${update_flowMeter}
+  name: 'flowmeter'
+  filters:
+  - lambda: return (x / 1.2);  
+  
+  total:
+    unit_of_measurement: 'ml'
+    name: 'RO Meter Total'
     accuracy_decimals: 2
-    update_interval: ${update_flowMeter}
-    name: 'RO Meter'
     filters:
-    - lambda: return (x / 1.2);  
-    
-    total:
-      unit_of_measurement: 'ml'
-      name: 'RO Meter Total'
-      accuracy_decimals: 2
-      filters:
-      - lambda: return (x / 1.2);
+    - lambda: return (x / 1.2);
