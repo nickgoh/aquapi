@@ -15,6 +15,7 @@ sensor:
         number: ${flowMeterPin}
         mode:
           input: true
+          pullup: true
     update_interval: ${update_flowMeter}
     filters:
     - lambda: return (x / 1.2);  
