@@ -16,5 +16,5 @@ text_sensor:
     icon: mdi:github
     update_interval: '365days'
     lambda: |-
-      return {"github.com/TheRealFalseReality/aquapi"};
+      return {"github.com/nickgoh/aquapi"};
     entity_category: "diagnostic"
