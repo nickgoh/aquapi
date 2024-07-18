@@ -7,7 +7,7 @@ substitutions:
 sensor:
   - platform: pulse_counter
     id: flowmeter
-    name: 'flowmeter'
+    name: 'Flow Meter'
     device_class: 'volume'
     unit_of_measurement: 'ml/min'
     accuracy_decimals: 2
@@ -22,7 +22,7 @@ sensor:
     
     total:
       unit_of_measurement: 'ml'
-      name: 'RO Meter Total'
+      name: 'Flow Meter Total'
       accuracy_decimals: 2
       device_class: 'volume'
       filters:
