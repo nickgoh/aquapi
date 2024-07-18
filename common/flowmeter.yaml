@@ -18,7 +18,7 @@ sensor:
           pullup: true
     update_interval: ${update_flowmeter}
     filters:
-    - lambda: return (x / 1.2);  
+    - lambda: return (x / 0.784);  
     
     total:
       unit_of_measurement: 'ml'
@@ -26,4 +26,4 @@ sensor:
       accuracy_decimals: 2
       device_class: 'volume'
       filters:
-      - lambda: return (x / 1.2);
+      - lambda: return (x / 0.784);
