@@ -1,11 +1,12 @@
 substitutions:
   tdspin1: "35"
-  update_tds: "5s"
+  update_tds: "never"
 
 sensor:
   - platform: adc
     pin: ${tdspin1}
     name: "TDS"
+    id : "tds"
     update_interval: ${update_tds}
     unit_of_measurement: "ppm"
     filters:

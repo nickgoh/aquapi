@@ -1,6 +1,6 @@
 substitutions:
   flowmeterpin: "14"
-  update_flowmeter: "10s"
+  update_flowmeter: "never"
 
 # flowmeter model FS-K2T
 # 1200 pulses LPM

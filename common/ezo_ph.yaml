@@ -1,7 +1,7 @@
 substitutions:
   # pH circuit, who's address is 99
   addPH: "99"
-  update_ph: "60s"
+  update_ph: "never"
 
 api:
   services: 
