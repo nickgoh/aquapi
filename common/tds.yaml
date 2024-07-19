@@ -1,6 +1,6 @@
 substitutions:
   tdspin1: "35"
-  update_tds: "1s"
+  update_tds: "5s"
 
 sensor:
   - platform: adc
