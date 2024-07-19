@@ -42,7 +42,7 @@ sensor:
   - platform: dallas_temp
     id: temp_2
     icon: mdi:thermometer-lines
-    address: 
+    # address: 
     name: "Temperature 2"
     state_class: "measurement"
     device_class: "temperature"
@@ -52,7 +52,7 @@ sensor:
           datapoints:
             - 0.0 -> ${cal_0_2}
             - 100.0 -> ${cal_100_2}
-    disabled_by_default: true
+    # disabled_by_default: true
   #   on_value: 
   #     then:
   #       - component.update: temp_range_2
