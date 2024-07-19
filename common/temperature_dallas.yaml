@@ -14,21 +14,7 @@ substitutions:
   # range_cool: "74"
   # range_warm: "82"
 
-external_components:
-  - source:
-      type: git
-      url: https://github.com/ssieb/esphome
-      ref: onewire
-    components: [ gpio ]
-    refresh: 1min
 
-interval:
-  - interval: 30s
-    then:
-      - component.update: temp_1
-      - delay: 2s
-      - component.update: temp_2
-      - delay: 2s
 
 # 18B20 sensor Pin
 one_wire:
