@@ -1,6 +1,6 @@
 substitutions:
   tdspin1: "35"
-  update_tds: "60s"
+  update_tds: "1s"
 
 sensor:
   - platform: adc
@@ -10,3 +10,4 @@ sensor:
     unit_of_measurement: "ppm"
     filters:
       - lambda: return (((133.42*(x*(3.3/1024))*(x*(3.3/1024))*(x*(3.3/1024))) - (255.86*(x*(3.3/1024))*(x*(3.3/1024))) + (857.39*(x*(3.3/1024))))*0.5)*1000;
+      # - lambda: return (133.42*(id(temp01_comp_v).state)*(id(temp01_comp_v).state)*(id(temp01_comp_v).state) - 255.86*(id(temp01_comp_v).state)*(id(temp01_comp_v).state) + 857.39*(id(temp01_comp_v).state))*0.5;
