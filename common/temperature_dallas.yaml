@@ -22,6 +22,14 @@ external_components:
     components: [ gpio ]
     refresh: 1min
 
+interval:
+  - interval: 30s
+    then:
+      - component.update: temp_1
+      - delay: 2s
+      - component.update: temp_2
+      - delay: 2s
+
 # 18B20 sensor Pin
 one_wire:
   - platform: gpio
