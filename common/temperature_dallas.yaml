@@ -1,6 +1,6 @@
 substitutions:
   dallasPin: "16"
-  update_temp: "never"
+  update_temp: "10s"
 
   # Calibration variables
   # 0C using Ice Water; 100C using Boiling Water  
@@ -14,13 +14,13 @@ substitutions:
   # range_cool: "74"
   # range_warm: "82"
 
-interval:
-  - interval: 10s
-    then:
-      - component.update: temp_1
-      - delay: 0.8s
-      - component.update: temp_2
-      - delay: 0.8s
+external_components:
+  - source:
+      type: git
+      url: https://github.com/ssieb/esphome
+      ref: onewire
+    components: [ gpio ]
+    refresh: 1min
 
 # 18B20 sensor Pin
 one_wire:
