@@ -1,5 +1,5 @@
 substitutions:
-  flowmeterpin: "12"
+  flowmeterpin: "11"
   update_flowmeter: "10s"
 
 # flowmeter model FS-K2T
