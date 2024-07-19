@@ -1,6 +1,6 @@
 substitutions:
   dallasPin: "16"
-  update_temp: "60s"
+  update_temp: "never"
 
   # Calibration variables
   # 0C using Ice Water; 100C using Boiling Water  
@@ -13,6 +13,14 @@ substitutions:
 
   # range_cool: "74"
   # range_warm: "82"
+
+interval:
+  - interval: 10s
+    then:
+      - component.update: temp_1
+      - delay: 0.8s
+      - component.update: temp_2
+      - delay: 0.8s
 
 # 18B20 sensor Pin
 one_wire:
