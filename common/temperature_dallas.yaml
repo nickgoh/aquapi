@@ -55,6 +55,7 @@ sensor:
     name: "Temperature 2"
     state_class: "measurement"
     device_class: "temperature"
+    update_interval: "${update_temp}"
     filters:
       - calibrate_linear:
           method: least_squares
