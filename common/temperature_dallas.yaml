@@ -1,6 +1,6 @@
 substitutions:
   dallasPin: "16"
-  update_temp: "never"
+  update_temp: "60s"
 
   # Calibration variables
   # 0C using Ice Water; 100C using Boiling Water  

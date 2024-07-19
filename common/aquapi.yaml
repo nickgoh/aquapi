@@ -19,15 +19,15 @@ text_sensor:
       return {"github.com/nickgoh/aquapi"};
     entity_category: "diagnostic"
 
-interval:
-  - interval: 15s
-    then:
-      - component.update: temp_1
-      - delay: 1s
-      - component.update: temp_2
-      - delay: 1s
-      - component.update: flowmeter
-      - delay: 1s
-      - component.update: ph_ezo 
-      - delay: 5s
-      - component.update: tds 
+# interval:
+#   - interval: 15s
+#     then:
+#       - component.update: temp_1
+#       - delay: 2s
+#       - component.update: temp_2
+#       - delay: 2s
+#       - component.update: flowmeter
+#       - delay: 1s
+#       - component.update: ph_ezo 
+#       - delay: 5s
+#       - component.update: tds 
