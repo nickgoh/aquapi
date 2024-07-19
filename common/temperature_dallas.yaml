@@ -26,12 +26,13 @@ external_components:
 one_wire:
   - platform: gpio
     pin: ${dallasPin}
-
+# 0x974f7bd443607c28 (DS18B20) 0x186ca5691f64ff28
 sensor:
   # Temperature Probe 1
   - platform: dallas_temp
     id: temp_1
     icon: mdi:thermometer-lines
+    address: 0x974f7bd443607c28
     name: "Temperature"
     state_class: "measurement"
     device_class: "temperature"
@@ -50,7 +51,7 @@ sensor:
   - platform: dallas_temp
     id: temp_2
     icon: mdi:thermometer-lines
-    # address: 
+    address: 0x186ca5691f64ff28
     name: "Temperature 2"
     state_class: "measurement"
     device_class: "temperature"
