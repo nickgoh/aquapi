@@ -1,14 +1,34 @@
 substitutions:
   tdspin1: "35"
-  update_tds: "8s"
+  update_tds: "5s"
 
 sensor:
   - platform: adc
     pin: ${tdspin1}
-    name: "TDS"
-    id : "tds"
+    name: "TDS Raw"
+    id : "tds_raw"
     update_interval: ${update_tds}
-    unit_of_measurement: "ppm"
+    unit_of_measurement: "V"
+    accuracy_decimals: 3
+    icon: "mdi:eye"
     filters:
-      - multiply: 3.3
-      - lambda: return (133.42*x*x*x - 255.86*x*x + 857.39*x)*0.5;
+      - multiply: 3.0
+      # - lambda: return (133.42*x*x*x - 255.86*x*x + 857.39*x)*0.5;
+
+  # Temperature Compensated Voltage
+  - platform: template
+    name: "TDS Compensated Voltage"
+    icon: "mdi:eye"
+    id: tds_comp
+    unit_of_measurement: 'V'
+    accuracy_decimals: 3
+    lambda: 'return ((id(tds_raw).state) / (1 + (0.02 * ((28) - 25.0))));'
+    update_interval: 60s    
+
+  # Temperature Compensated TDS
+  - platform: template
+    name: TDS"
+    icon: "mdi:water-percent"
+    unit_of_measurement: 'PPM'
+    accuracy_decimals: 0    
+    lambda: return (133.42*(id(tds_comp).state)*(id(tds_comp).state)*(id(tds_comp).state) - 255.86*(id(tds_comp).state)*(id(tds_comp).state) + 857.39*(id(tds_comp).state))*0.5;
