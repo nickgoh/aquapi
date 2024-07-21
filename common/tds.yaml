@@ -23,12 +23,13 @@ sensor:
     unit_of_measurement: 'V'
     accuracy_decimals: 3
     lambda: 'return ((id(tds_raw).state) / (1 + (0.02 * ((28) - 25.0))));'
-    update_interval: 60s    
+    update_interval: ${update_tds}
 
   # Temperature Compensated TDS
   - platform: template
-    name: TDS"
+    name: "TDS"
     icon: "mdi:water-percent"
     unit_of_measurement: 'PPM'
-    accuracy_decimals: 0    
+    accuracy_decimals: 0
+    update_interval: ${update_tds}
     lambda: return (133.42*(id(tds_comp).state)*(id(tds_comp).state)*(id(tds_comp).state) - 255.86*(id(tds_comp).state)*(id(tds_comp).state) + 857.39*(id(tds_comp).state))*0.5;
