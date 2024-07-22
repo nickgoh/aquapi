@@ -1,6 +1,7 @@
 substitutions:
   tdspin1: "35"
   update_tds: "5s"
+  # tds_temp : "28"
 
 sensor:
   - platform: adc
@@ -11,8 +12,9 @@ sensor:
     unit_of_measurement: "V"
     accuracy_decimals: 3
     icon: "mdi:eye"
+    attenuation: 6db
     filters:
-      - multiply: 3.0
+      - multiply: 3.3
       # - lambda: return (133.42*x*x*x - 255.86*x*x + 857.39*x)*0.5;
 
   # Temperature Compensated Voltage
