@@ -31,8 +31,7 @@ packages:
   flowmeter: !include common/flowmeter.yaml
 
 external_components:
-    source:
-      path: "components"
+  - source: "components"
   # source:
   #   type: git
   #   url: https://github.com/nickgoh/aquapi/
