@@ -19,9 +19,9 @@ esphome:
     name: TheRealFalseReality.aquapi
     version: "${app_version}"
   includes:
-          - tds/EEPROM.h
-          - tds/GravityTDS.h
-          - tds/tds_sensor.h
+          - common/tds/EEPROM.h
+          - common/tds/GravityTDS.h
+          - common/tds/tds_sensor.h
 
 esp32:
   board: esp32dev
