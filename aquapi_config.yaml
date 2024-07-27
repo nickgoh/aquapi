@@ -29,3 +29,9 @@ packages:
   # debug: !include common/debug.yaml
   tds: !include common/tds.yaml
   flowmeter: !include common/flowmeter.yaml
+
+external_components:
+  source:
+    type: git
+    url: https://github.com/nickgoh/aquapi/tree/main/components/tds
+    ref: main
