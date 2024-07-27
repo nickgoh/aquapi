@@ -4,34 +4,15 @@ substitutions:
   # tds_temp : "28"
 
 sensor:
-  - platform: adc
-    pin: ${tdspin1}
-    name: "TDS Raw"
-    id : "tds_raw"
-    update_interval: ${update_tds}
-    unit_of_measurement: "V"
-    accuracy_decimals: 3
-    icon: "mdi:eye"
-    attenuation: 6db
-    filters:
-      - multiply: 3.3
-      # - lambda: return (133.42*x*x*x - 255.86*x*x + 857.39*x)*0.5;
-
-  # Temperature Compensated Voltage
-  - platform: template
-    name: "TDS Compensated Voltage"
-    icon: "mdi:eye"
-    id: tds_comp
-    unit_of_measurement: 'V'
-    accuracy_decimals: 3
-    lambda: 'return ((id(tds_raw).state) / (1 + (0.02 * ((28) - 25.0))));'
-    update_interval: ${update_tds}
-
-  # Temperature Compensated TDS
-  - platform: template
-    name: "TDS"
-    icon: "mdi:water-percent"
-    unit_of_measurement: 'PPM'
-    accuracy_decimals: 0
-    update_interval: ${update_tds}
-    lambda: return (133.42*(id(tds_comp).state)*(id(tds_comp).state)*(id(tds_comp).state) - 255.86*(id(tds_comp).state)*(id(tds_comp).state) + 857.39*(id(tds_comp).state))*0.5;
+  - platform: custom
+    lambda: |-
+      auto tds_sensor = new TdsSensor(28.0,${tdspin1});
+      App.register_component(tds_sensor);
+      return {tds_sensor->tds_sensor, tds_sensor->voltage_sensor};
+    sensors:
+      - name: "Water TDS"
+        unit_of_measurement: ppm
+        accuracy_decimals: 2
+      - name: "Water Voltage"
+        unit_of_measurement: mV
+        accuracy_decimals: 0
