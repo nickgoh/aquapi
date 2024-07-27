@@ -32,7 +32,7 @@ packages:
 
 external_components:
  - source:
-      path: /components
+      path: components
   # source:
   #   type: git
   #   url: https://github.com/nickgoh/aquapi/
