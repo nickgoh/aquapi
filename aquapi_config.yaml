@@ -35,4 +35,3 @@ external_components:
     type: git
     url: https://github.com/nickgoh/aquapi/components/tds
     ref: main
-    refresh: 0s # optional
