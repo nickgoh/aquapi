@@ -27,13 +27,13 @@ packages:
   #ezo_pmp_duo: !include common/ezo_pmp_duo.yaml
   # ezo_commands: !include common/ezo_commands.yaml
   # debug: !include common/debug.yaml
-  tds: !include common/tds.yaml
+  # tds: !include common/tds.yaml
   flowmeter: !include common/flowmeter.yaml
 
-external_components:
-    # source: 
-      # path: /components
-  source:
-    type: git
-    url: https://github.com/nickgoh/esphome/
-    ref: main
+# external_components:
+#     # source: 
+#       # path: /components
+#   source:
+#     type: git
+#     url: https://github.com/nickgoh/esphome/
+#     ref: main
